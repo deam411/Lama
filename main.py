@@ -5,7 +5,7 @@ class Lama:
     """
     Un'AI personale per la programmazione e le attività quotidiane.
     """
-    def __init__(self, model="ollama/llama3"):
+    def __init__(self, model="ollama/mixtral"):
         """
         Inizializza l'AI personale con un modello locale tramite Ollama.
 
@@ -45,4 +45,16 @@ if __name__ == "__main__":
     
     # Inizia una semplice chat a riga di comando
     print("\nLama è pronta. Scrivi 'esci' per terminare la chat.")
-    print("-
+    print("-" * 20)
+    while True:
+        try:
+            user_message = input("Tu: ")
+            if user_message.lower() == 'esci':
+                print("Arrivederci!")
+                break
+            
+            ai_message = lama_ai.chat(user_message)
+            print(f"Lama: {ai_message}")
+        except KeyboardInterrupt:
+            print("\nArrivederci!")
+            break
