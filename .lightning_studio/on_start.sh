@@ -37,13 +37,13 @@ else
 fi
 
 
-# 4. Controlla e scarica il modello 'mixtral' se non è presente
-if ollama list | grep -q "mixtral"
+# 4. Controlla e scarica il modello 'llama3' (8B) se non è presente
+if ollama list | grep -q "llama3:latest"
 then
-    echo "[4/4] Il modello 'mixtral' è già presente."
+    echo "[4/4] Il modello 'llama3' è già presente."
 else
-    echo "[4/4] Modello 'mixtral' non trovato. Download in corso (~26GB)..."
-    ollama pull mixtral
+    echo "[4/4] Modello 'llama3' non trovato. Download in corso (~4.7GB)..."
+    ollama pull llama3
     echo "Download del modello completato."
 fi
 
