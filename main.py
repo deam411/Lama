@@ -45,4 +45,16 @@ if __name__ == "__main__":
     
     # Inizia una semplice chat a riga di comando
     print("\nLama è pronta. Scrivi 'esci' per terminare la chat.")
-    print("-
+    print("-" * 20)
+    while True:
+        try:
+            user_message = input("Tu: ")
+            if user_message.lower() == 'esci':
+                print("Arrivederci!")
+                break
+            
+            ai_message = lama_ai.chat(user_message)
+            print(f"Lama: {ai_message}")
+        except KeyboardInterrupt:
+            print("\nArrivederci!")
+            break
